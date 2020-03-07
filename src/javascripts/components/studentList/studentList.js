@@ -1,15 +1,14 @@
-import './studentList.scss';
 import utils from '../../helpers/utils';
+import studentCard from '../studentCard/studentCard';
+
+import './studentList.scss';
 
 const createStudentList = (students) => {
-  let domString = '';
-
+  let domString = '<ul class="student-list">';
   students.forEach((student) => {
-    domString += '<ul class="student-list">';
-    domString += `<li>${student.name}</li>`;
-    domString += '</ul>';
+    domString += studentCard.createStudentCard(student);
   });
-
+  domString += '</ul>';
   utils.printToDom('student-container', domString);
 };
 
