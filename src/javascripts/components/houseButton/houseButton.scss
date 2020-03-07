@@ -1,0 +1,46 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+%house-button {
+  box-shadow: $box-shadow;
+  @include default-font(14px);
+  outline: 0;
+  border: none;
+  border-radius: 2px;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 16px;
+  margin: 20px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    display: inline-block;
+    padding-left: 20px;
+    max-width: 40px;
+    max-height: 40px;
+  }
+}
+
+@mixin button-styles($housecolor) {
+  @extend %house-button;
+  background-color: $housecolor;
+}
+
+.house-button-gryffindor {
+  @include button-styles($gryffindor);
+}
+
+.house-button-slytherin {
+  @include button-styles($slytherin);
+}
+
+.house-button-ravenclaw {
+  @include button-styles($ravenclaw);
+}
+
+.house-button-hufflepuff {
+  @include button-styles($hufflepuff);
+} 
